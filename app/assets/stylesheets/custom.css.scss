@@ -18,8 +18,22 @@ $navbar-default-bg: lightblue;
 
 .center {
     text-align: center;
+    
 }
 
+.jumbotron {
+    
+    background-image: asset-url('bl.jpg');
+    background-size:100% 100%;
+    overflow: hidden;
+    height: 600px;
+
+    
+}
+
+.btn{
+    text-align:bottom;
+}
 
 @import "bootstrap-sprockets";
 @import "bootstrap";

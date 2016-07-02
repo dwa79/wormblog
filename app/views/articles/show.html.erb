@@ -4,6 +4,8 @@
 
 <p>Description: <%= @article.description  %></p>
 
+<%= link_to image_tag('girl.jpg'), 'https://wormblog.herokuapp.com/articles' %>
+
 <%= link_to 'Edit this article', edit_article_path(@article) %> |
 
 <%= link_to 'Back to articles listing', articles_path %>
