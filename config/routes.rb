@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'pages/home', to: 'pages#home'
-  get 'pages/about', to: 'pages#about'
+  root 'pages#home'
+  get 'about', to: 'pages#about'
 
   resources :articles
   # The priority is based upon order of creation: first created -> highest priority.
