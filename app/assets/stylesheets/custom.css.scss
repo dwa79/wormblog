@@ -1,9 +1,10 @@
-$navbar-default-bg: lightblue;
+$navbar-default-bg: orange;
 
 #logo{
     float: left;
     font-size: 1.8em;
     color:white;
+    font-family: "Curlz MT", Times, serif;
     text-transform: uppercase;
     letter-spacing: 0px;
     font-weight: bold;
@@ -11,7 +12,7 @@ $navbar-default-bg: lightblue;
 }
 
 #logo:hover {
-    color: orange;
+    color: lightblue;
     text-decoration: none;
     
 }
@@ -28,12 +29,50 @@ $navbar-default-bg: lightblue;
     overflow: hidden;
     height: 600px;
 
+}
+
+.jumbotron h1 {
+    text-align: center;
+    margin-top: 2px;
+    letter-spacing: 3px;
+    font-weight: bold;
     
 }
 
-.btn{
-    text-align:bottom;
+.btn-xlarge {
+    font-size: 1.7em;
+    background-color: orange !important;
 }
+
+.btn-xlarge:hover {
+    color: purple !important;
+}
+
+footer {
+    maring-top: 45px;
+    padding-top: 5px;
+    border-top:1px solid black;
+    color: #777;
+}
+
+footer a:hover {
+    color: green;
+}
+
+footer small {
+    float: left;
+}
+
+footer ul {
+    float: right;
+    list-style: none;
+}
+
+footer ul li {
+    float: left;
+    margin-left: 15px;
+}
+
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
