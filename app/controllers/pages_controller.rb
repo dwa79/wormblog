@@ -7,6 +7,10 @@ class PagesController < ApplicationController
     def about
     
     end
+    
+    def personal
+        
+    end
 
 
 end
