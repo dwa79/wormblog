@@ -3,6 +3,14 @@
         width: 65%;
         height: auto;
     }
+    .im {
+        display:inline-block;
+    }
 </style>
-
-<%= link_to image_tag('girl.jpg'), 'https://wormblog.herokuapp.com/articles' %>
+<div class="im">
+    <ul>
+        <img style="display:inline-block"><%= link_to image_tag('girl.jpg'), 'https://wormblog.herokuapp.com/articles' %></img>
+        <img style="display:inline-block"><%= link_to image_tag('girl.jpg'), 'https://wormblog.herokuapp.com/articles' %></img>
+        <li style="display:inline-block"><%= link_to image_tag('girl.jpg'), 'https://wormblog.herokuapp.com/articles' %></li>
+    </ul>
+</div>
