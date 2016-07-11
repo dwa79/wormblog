@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'bcrypt', '~> 3.1.7'
+gem 'will_paginate', '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
 gem 'rails',        '4.2.2'
 gem 'sass-rails',   '5.0.2'
 gem 'bootstrap-sass', '~> 3.3.6'   #install boostrap
