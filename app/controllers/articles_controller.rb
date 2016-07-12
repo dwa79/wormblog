@@ -1,5 +1,8 @@
 class ArticlesController < ApplicationController
-    #before_action :set_article, only: [:edit, :update, :show, :destroy]
+    before_action :set_article, only: [:edit, :update, :show, :destroy]
+    before_action :require_user, except: [:index, :show]
+    #before_action :require_same_user,
+    
     
     def index
         @articles=Article.paginate(page: params[:page], per_page: 5)   
@@ -52,6 +55,10 @@ class ArticlesController < ApplicationController
     
     
     private
+        def set_article
+          @article = Article.find(params[:id])  
+        end
+    
         def article_params
             params.require(:article).permit(:title, :description) 
         end
