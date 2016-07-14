@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'ckeditor'
+gem "non-stupid-digest-assets"
 gem "paperclip", '4.3.2'
 gem 'carrierwave'
 gem 'mini_magick'
