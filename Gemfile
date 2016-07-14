@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'ckeditor'
+gem "paperclip", '4.3.2'
+gem 'carrierwave'
+gem 'mini_magick'
 gem 'tinymce-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate', '3.0.7'
