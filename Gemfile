@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'delayed_job_active_record'
 gem 'ckeditor'
 gem "non-stupid-digest-assets"
 gem "paperclip", '4.3.2'
