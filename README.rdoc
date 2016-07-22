@@ -20,6 +20,5 @@ CKEDITOR.editorConfig = (config) ->
 
 
 
-<% if logged_in? %>
+
     <%= link_to "mail test", :controller => 'users', :action => 'mail', class: "btn btn-primary btn-lg btn-xlarge" %>
-<% end %>
