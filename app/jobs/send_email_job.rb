@@ -3,6 +3,6 @@ class SendEmailJob < ActiveJob::Base
 
   def perform(user)
     @user = user
-    UserMailer.welcome_email(@user).deliver_later
+    
   end
 end
