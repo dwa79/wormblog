@@ -28,14 +28,13 @@ module Ude
     
     config.action_mailer.delivery_method = :smtp
 
-    config.action_mailer.smtp_settings = {
-      :address              => "smtp.gmail.com",
-      :port                 => 587,
-      :domain               => "gmail.com",
-      :user_name            => "0theskyrider0@gmail.com",
-      :password             => "Wd12345678",
-      :authentication       => :login,
-      :enable_starttls_auto => true
+    ActionMailer::Base.smtp_settings = {
+      :port           => 587,
+      :address        => "smtp.mailgun.org",
+      :domain         => 'sandbox9229a88084d44ceebe806eecf603efe3.mailgun.org',
+      :user_name      => 'postmaster@sandbox9229a88084d44ceebe806eecf603efe3.mailgun.org',
+      :password       => '3bba0d6a4b65f0398b64cef72f209ec2',
+      :authentication => :plain,
     }
 
   end
