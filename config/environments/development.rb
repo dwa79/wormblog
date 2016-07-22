@@ -49,7 +49,7 @@ Rails.application.configure do
     :domain               => "gmail.com",
     :user_name            => "0theskyrider0@gmail.com",
     :password             => "Wd12345678",
-    :authentication       => :plain,
+    :authentication       => :login,
     :enable_starttls_auto => true
   }
 end
