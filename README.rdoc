@@ -17,3 +17,9 @@ CKEDITOR.editorConfig = (config) ->
   config.toolbar = 'Pure'
   true
 //= require turbolinks
+
+
+
+<% if logged_in? %>
+    <%= link_to "mail test", :controller => 'users', :action => 'mail', class: "btn btn-primary btn-lg btn-xlarge" %>
+<% end %>
