@@ -22,3 +22,6 @@ CKEDITOR.editorConfig = (config) ->
 
 
     <%= link_to "mail test", :controller => 'users', :action => 'mail', class: "btn btn-primary btn-lg btn-xlarge" %>
+    
+    
+    //gmail config : config/application.yml
