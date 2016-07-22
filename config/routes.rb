@@ -7,8 +7,20 @@ Rails.application.routes.draw do
   resources :articles
   
   
-  get 'signup', to: 'users#new'
-  resources :users, except: [:new]
+  get 'signup', to: 'users#new' do
+    member do
+      get :confirm_email
+    end
+  end
+  
+  get 'users/:id/mail', to: 'users#mail'
+  
+  
+  resources :users, except: [:new] do
+    member do
+      get :confirm_email
+    end
+  end
   
   
   get 'login', to: 'sessions#new'

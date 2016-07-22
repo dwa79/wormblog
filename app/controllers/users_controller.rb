@@ -15,7 +15,9 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.save
          session[:user_id] = @user.id
+         
          flash[:success] = "Hello #{@user.username}, welcome to Wormblog!"
+         
          redirect_to user_path(@user)
       else
          render 'new'
@@ -49,6 +51,12 @@ class UsersController < ApplicationController
       redirect_to users_path
    end
    
+   def mail
+      @user = User.find(params[:id])
+      UserMailer.welcome_email(@user).deliver
+      redirect_to user_path(@user)
+   end
+   
    
    private
    def user_params
@@ -69,6 +77,18 @@ class UsersController < ApplicationController
    def require_admin
       if (logged_in? and !current_user.admin?) || !logged_in?
          flash[:danger] = "Only admin can perform that action"
+         redirect_to root_path
+      end
+   end
+   
+   def confirm_email
+      user = User.find_by_confirm_token(params[:id])
+      if user
+         user.email_activate
+         flash[:success] = "Welcome to the Sample App! Your email has been confirmed."
+         redirect_to login_path
+      else
+         flash[:error] = "Sorry. User does not exist"
          redirect_to root_path
       end
    end
