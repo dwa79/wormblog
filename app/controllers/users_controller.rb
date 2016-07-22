@@ -53,7 +53,7 @@ class UsersController < ApplicationController
    
    def mail
       @user = User.find(params[:id])
-      UserMailer.welcome_email(@user).deliver_now
+      UserMailer.welcome_email(@user).deliver
       #SendEmailJob.set(wait: 2.seconds).perform_later(@user)
       redirect_to user_path(@user)
    end
