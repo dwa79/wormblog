@@ -28,9 +28,12 @@
         <h2><%= @article.comments.count %> Comments</h2>
         <%= render @article.comments %>
         
-        
-        <h2>Add a comment:</h2>
-        <%= render 'comments/form' %>
+        <% if logged_in? %>
+            <h2>Add a comment:</h2>
+            <%= render 'comments/form' %>
+        <% else %>
+            <h2>You have to log in to write comments.</h2>
+        <% end %>
     </div>
 </div>
 
