@@ -4,23 +4,19 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'personal', to: 'pages#personal'
 
-  resources :articles
-  
-  
-  get 'signup', to: 'users#new' do
-    member do
-      get :confirm_email
-    end
+  resources :articles do
+    resources :comments
   end
+  
+  
+  get 'signup', to: 'users#new'
+
   
   get 'users/:id/mail', to: 'users#mail'
   
   
-  resources :users, except: [:new] do
-    member do
-      get :confirm_email
-    end
-  end
+  resources :users, except: [:new]
+
   
   
   get 'login', to: 'sessions#new'

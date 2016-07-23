@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
     before_create :confirmation_token
     has_many :articles, dependent: :destroy  #delete user will delete all the articles
+    #has_many :comments, dependent: :destroy
     before_save { self.email = email.downcase }
     validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 3, maximum: 30 }
     VALID_EMAIL_REGEX= /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
