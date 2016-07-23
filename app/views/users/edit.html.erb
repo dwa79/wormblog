@@ -1,4 +1,49 @@
 <h1 align="center">Edit your account</h1>
 
-<%= render 'form' %>
+<br><br><br>
+<% 
+=begin %>
+<% if @article.title.blank? %>
+    <p>shut up and print sth</p>
+<% end %>
+<% 
+=end %>
+        
+        
+<div class='row'>
+    <div class='col-xs-12'>
+        
+        <%= form_for(@user, :html => {class: "form-horizontal", role:"form"}) do |f| %>
 
+            <div class="form-group">
+                <div class="control-label col-sm-2">            
+                    <%= f.label :email, "Email:" %>
+                    
+                </div>
+                <div class="col-sm-8">
+                    <%= f.email_field :email, class: "form-control", placeholder: "Enter your email" %>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="control-label col-sm-2">            
+                    <%= f.label :password, "Password:" %>
+                    
+                </div>
+                <div class="col-sm-8">
+                    <%= f.password_field :password, class: "form-control", placeholder: "Enter your password" %>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <%= f.submit(@user.new_record? ? "Sign up now!" : "Update your account", class:'btn btn-primary btn-lg') %>
+                </div>
+            </div>
+        <% end %>
+        <div class="col-xs-6 col-xs-offset-3">
+            [ <%= link_to 'Cancel request and return to home', root_path %> ]
+        </div>
+
+    </div>
+</div>

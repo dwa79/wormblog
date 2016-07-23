@@ -17,7 +17,7 @@
                     <% else %>
                         <li>not activated</li>
                     <% end %>
-                    <% if logged_in? and current_user.admin? %>
+                    <% if logged_in? and current_user.admin? && !user.admin?%>
                         <li><%= link_to "Delete the user", user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete the user and all his/her articles?"} %></li>
                     <% end %>
                 </div>
