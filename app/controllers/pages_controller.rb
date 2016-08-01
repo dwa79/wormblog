@@ -12,5 +12,12 @@ class PagesController < ApplicationController
         
     end
 
+    def google
+        
+    end
+    
+    def try
+        
+    end
 
 end

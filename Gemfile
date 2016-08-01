@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+gem 'gmaps4rails'
 gem 'delayed_job_active_record'
 gem 'ckeditor'
 gem "non-stupid-digest-assets"

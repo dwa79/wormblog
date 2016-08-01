@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'google', to: 'pages#google'
+  get 'try', to: 'pages#try'
   root 'pages#home'
   get 'about', to: 'pages#about'
   get 'personal', to: 'pages#personal'

@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require ckeditor/init
+//= require underscore
+//= require gmaps/google
 //= require_tree .
 //= require tinymce
 
