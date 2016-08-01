@@ -3,18 +3,21 @@
 <%= form_for(:session, :html => {class: "form-horizontal", role:"form"},  url: login_path) do |f| %>
 
     <div class="form-group">
-        <div class="control-label col-sm-2">            
+        <div class="control-label col-sm-2"> 
             <%= f.label :email, "Email:" %>
-            
+            <span class="glyphicon glyphicon-envelope"></span>
         </div>
         <div class="col-sm-8">
+            
             <%= f.email_field :email, class: "form-control", placeholder: "Enter your email", autofocus: true %>
+            
         </div>
     </div>
     <br>
     <div class="form-group">
         <div class="control-label col-sm-2">            
             <%= f.label :password, "Password:" %>
+            <span class="glyphicon glyphicon-expand"></span>
             
         </div>
         <div class="col-sm-8">

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'acts_as_votable', '~> 0.10.0'
 gem 'gmaps4rails'
 gem 'delayed_job_active_record'
 gem 'ckeditor'
