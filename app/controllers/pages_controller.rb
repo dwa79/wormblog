@@ -19,5 +19,10 @@ class PagesController < ApplicationController
     def try
         
     end
+    
+    def comment_all
+      @articles = Article.all
+    end
+   
 
 end

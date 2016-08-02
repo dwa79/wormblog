@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   
   get 'users/:id/mail', to: 'users#mail'
-  
+  get 'comment_all', to: 'pages#comment_all'
   
   resources :users, except: [:new]
 

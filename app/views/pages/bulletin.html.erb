@@ -76,5 +76,15 @@
 
 
 <% if logged_in? %>
+  <% current_user.articles.each do |article| %>
+  <div class="row">
+      <div class="col-xs-8 col-xs-offset-2">
+        <h2><%= article.title %></h2>
+        <br>
+        <%= render article.comments.order("created_at DESC") %>
   
+      </div>
+  </div>
+  <br><br><br>
+  <% end %>
 <% end %>
