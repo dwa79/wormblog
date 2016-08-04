@@ -33,7 +33,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $("#b2").click(function(){
-        var div = $("#anim");
+        var div = $(".anim");
         div.animate({height: '300px', opacity: '0.4'}, "slow");
         div.animate({width: '300px', opacity: '0.8'}, "slow");
         div.animate({height: '100px', opacity: '0.4'}, "slow");
@@ -61,7 +61,9 @@ $(document).ready(function(){
 
 <p>Look at the little green box!</p>
 
-<div id="anim" style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+<div class="anim" style="background:#98bf21;height:100px;width:100px;position:absolute;">
+
+</div>
 
 <br>
 <br><br>
