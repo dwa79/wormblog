@@ -42,7 +42,11 @@
     
     <hr><hr><br>
     <div id="comments">
-        <h2><%= @article.comments.count %> Comments</h2>
+        <% if @article.comments.count == 0 %>
+            <h4 style="color:green;">No comment at this point.</h4>
+        <% else %>
+            <h4><%= pluralize(@article.comments.count, "comment") if @article.comments %></h4>
+        <% end %>
         <%= render @article.comments.order("created_at DESC") %>
         
         <% if logged_in? %>

@@ -50,7 +50,11 @@ $(document).ready(function(){
                     <% end %>
                     <div class="flip">User Profile</div>
                     <div class="panel">
-                        <small>This user possesses <%= pluralize(user.articles.count, "article") if user.articles %></small>
+                        <% if user.articles.count == 0 %>
+                            <small>This user possesses 0 article</small>
+                        <% else %>
+                            <small>This user possesses <%= pluralize(user.articles.count, "article") if user.articles %></small>
+                        <% end %>
                         <br>
                         <small>Became a wormblogger on <%= user.created_at %> </small>
                         <small></small>
