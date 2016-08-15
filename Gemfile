@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'gmaps4rails'
