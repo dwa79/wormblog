@@ -1,5 +1,6 @@
 <h1 align="center">Welcome to <%= @user.username %>'s page</h1>
-
+<button type="button" class="btn btn-xs btn-warning"><%= link_to 'See his/her profile', :controller => 'users', :action => 'info' %></button>
+<span><button type="button" class="btn btn-xs btn-info"><%= link_to 'See his/her profile', :controller => 'users', :action => 'info' %></button></span>
 <div align="center">
     <p class="round-image-100"><%= image_tag(@user.avatar.url(:thumb)) %></p>
 </div>

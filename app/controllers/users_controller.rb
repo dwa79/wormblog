@@ -51,6 +51,10 @@ class UsersController < ApplicationController
       redirect_to users_path
    end
    
+   def info
+      @user = User.find(params[:id])
+   end
+   
    def mail
       @user = User.find(params[:id])
       UserMailer.welcome_email(@user).deliver

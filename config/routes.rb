@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   
   get 'signup', to: 'users#new'
 
-  
+  get 'users/:id/info', to: 'users#info'
   get 'users/:id/mail', to: 'users#mail'
   get 'comment_all', to: 'pages#comment_all'
   
