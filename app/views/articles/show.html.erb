@@ -50,7 +50,7 @@
         <%= render @article.comments.order("created_at DESC") %>
         
         <% if logged_in? %>
-            <h2>Add a comment:</h2>
+            <h2>Share your thought:</h2>
             <%= render 'comments/form' %>
         <% else %>
             <h2 style="color:grey;">You have to log in to write comments.</h2>

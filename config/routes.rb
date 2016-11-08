@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   get 'comment_all', to: 'pages#comment_all'
   
   resources :users, except: [:new]
+  
+  resources :categories, except: [:destroy]
 
   
   

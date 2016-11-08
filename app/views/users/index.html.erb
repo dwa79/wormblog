@@ -18,8 +18,9 @@
 }
 
 .well {
-    box-shadow: inset 0 1px 1px rgba(255, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 1.6) !important;
+    box-shadow: inset 0 5px 5px rgba(128, 0, 128, 0.5), 0 0 8px rgba(255, 204, 0, 2.0) !important;
 }
+
 </style>
 
 <script>
@@ -35,34 +36,65 @@ $(document).ready(function(){
     <%= will_paginate %>
 
     <% @users.each do |user| %>
-        <ul class="listing">
-            <div class="row">
-                <div class="well col-md-6 col-md-offset-3">
-                    <li class="round-image-100"><%= link_to image_tag(user.avatar.url(:thumb)), user_path(user) %></li>
-                    <li class="article-title"><%= link_to user.username, user_path(user) %></li>
-                    <% if user.email_confirmed?  %>
-                        <li>activated</li>
-                    <% else %>
-                        <li>not activated</li>
-                    <% end %>
-                    <% if logged_in? and current_user.admin? && !user.admin?%>
-                        <li><%= link_to "Delete the user", user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete the user and all his/her articles?"} %></li>
-                    <% end %>
-                    <div class="flip">User Profile</div>
-                    <div class="panel">
-                        <% if user.articles.count == 0 %>
-                            <small>This user possesses 0 article</small>
+        <% if user.admin? %>
+            <ul class="listing">
+                <div class="row">
+                    <div class="well adm col-md-6 col-md-offset-3">
+                        <li class="round-image-100"><%= link_to image_tag(user.avatar.url(:thumb)), user_path(user) %></li>
+                        <li class="article-title"><%= link_to user.username, user_path(user) %> (admin)</li>
+                        <% if user.email_confirmed?  %>
+                            <li>activated</li>
                         <% else %>
-                            <small>This user possesses <%= pluralize(user.articles.count, "article") if user.articles %></small>
+                            <li>not activated</li>
                         <% end %>
-                        <br>
-                        <small>Became a one-blogger on <%= user.created_at %> </small>
-                        <small></small>
-                        <small></small>
+                        <% if logged_in? and current_user.admin? && !user.admin?%>
+                            <li><%= link_to "Delete the user", user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete the user and all his/her articles?"} %></li>
+                        <% end %>
+                        <div class="flip">User Profile</div>
+                        <div class="panel">
+                            <% if user.articles.count == 0 %>
+                                <small>This user possesses 0 article</small>
+                            <% else %>
+                                <small>This user possesses <%= pluralize(user.articles.count, "article") if user.articles %></small>
+                            <% end %>
+                            <br>
+                            <small>Became a one-blogger on <%= user.created_at %> </small>
+                            <small></small>
+                            <small></small>
+                        </div>
                     </div>
-                </div>
-            </div>        
-        </ul>
+                </div>        
+            </ul>
+        <% else %>
+            <ul class="listing">
+                <div class="row">
+                    <div class="well non-adm col-md-6 col-md-offset-3">
+                        <li class="round-image-100"><%= link_to image_tag(user.avatar.url(:thumb)), user_path(user) %></li>
+                        <li class="article-title"><%= link_to user.username, user_path(user) %></li>
+                        <% if user.email_confirmed?  %>
+                            <li>activated</li>
+                        <% else %>
+                            <li>not activated</li>
+                        <% end %>
+                        <% if logged_in? and current_user.admin? && !user.admin?%>
+                            <li><%= link_to "Delete the user", user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete the user and all his/her articles?"} %></li>
+                        <% end %>
+                        <div class="flip">User Profile</div>
+                        <div class="panel">
+                            <% if user.articles.count == 0 %>
+                                <small>This user possesses 0 article</small>
+                            <% else %>
+                                <small>This user possesses <%= pluralize(user.articles.count, "article") if user.articles %></small>
+                            <% end %>
+                            <br>
+                            <small>Became a one-blogger on <%= user.created_at %> </small>
+                            <small></small>
+                            <small></small>
+                        </div>
+                    </div>
+                </div>        
+            </ul>
+        <% end %>
     <% end %>
     <%= will_paginate %>
 </div>

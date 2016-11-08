@@ -57,3 +57,14 @@ CKEDITOR.editorConfig = (config) ->
      authentication:       'plain',
      enable_starttls_auto: true  
   }
+  
+models/comment_test.rb
+{
+require 'test_helper'
+
+class CommentTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+end
+}

@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       if @user.save
          session[:user_id] = @user.id
          
-         flash[:success] = "Hello #{@user.username}, welcome to Wormblog!"
+         flash[:success] = "Hello #{@user.username}, welcome to One-blog!"
          
          redirect_to user_path(@user)
       else
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
    def update
       #@user = User.find(params[:id])
       if @user.update(user_params)
-         flash[:success] = "Your account has been changed"
+         flash[:success] = "Your account has changed"
          redirect_to articles_path
       else
          render 'edit'
@@ -82,7 +82,7 @@ class UsersController < ApplicationController
    
    def require_admin
       if (logged_in? and !current_user.admin?) || !logged_in?
-         flash[:danger] = "Only admin can perform that action"
+         flash[:danger] = "You need to ask an administrator to perform this action"
          redirect_to root_path
       end
    end
@@ -91,7 +91,7 @@ class UsersController < ApplicationController
       user = User.find_by_confirm_token(params[:id])
       if user
          user.email_activate
-         flash[:success] = "Welcome to the Sample App! Your email has been confirmed."
+         flash[:success] = "Welcome again to One-blog! Your email has been confirmed."
          redirect_to login_path
       else
          flash[:error] = "Sorry. User does not exist"
